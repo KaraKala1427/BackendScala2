@@ -38,13 +38,13 @@ class UrlMemoryRepository(initialUrls: Seq[Url] = Seq.empty)(implicit ec:Executi
       for(check <- urls){
         if(check.shortUrl == url.shortUrl) {
           bool = true
-          show = "https://urlshortertask.herokuapp.com/" + check.shortUrl
+          show = "https://week12a.herokuapp.com/" + check.shortUrl
         }
 
       }
       if(bool == false) {
         urls = urls :+ url
-        show = "https://urlshortertask.herokuapp.com/" + url.shortUrl
+        show = "https://week12a.herokuapp.com/" + url.shortUrl
       }
       show
     }
