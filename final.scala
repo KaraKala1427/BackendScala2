@@ -51,3 +51,22 @@ object Solution {
         1 + Math.max(maxDepth(root.left), maxDepth(root.right))
     }
 }
+
+object Solution {
+    def canFormArray(arr: Array[Int], pieces: Array[Array[Int]]): Boolean = {
+        var ar = arr
+        for(i <- 0 to pieces.length-1){
+          if(!ar.contains(pieces(i)(0))) return false
+          var c = ar.indexOf(pieces(i)(0))
+
+          for(j <- 1 to pieces(i).length-1){
+            val x = pieces(i)(j)
+            if(!ar.contains(x)) return false
+            if(c+1 != ar.indexOf(x)) return false
+            c+=1
+
+          }
+        }
+        return true
+    }
+}
