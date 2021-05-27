@@ -70,3 +70,16 @@ object Solution {
         return true
     }
 }
+
+object Solution {
+    def maxDepth(root: Node): Int = {
+      if (root == null) return 0
+      var max_depth = 0
+
+      for (child <- root.children) {
+        val depth = maxDepth(child)
+        max_depth = Math.max(depth, max_depth)
+      }
+      max_depth + 1
+    }
+}
