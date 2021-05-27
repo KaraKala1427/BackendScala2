@@ -1,0 +1,11 @@
+object Solution {
+    def largestPerimeter(nums: Array[Int]): Int = {
+        scala.util.Sorting.quickSort(nums);
+        for(i <- nums)
+            print(i + " ")
+        for(i <- nums.length-3 to 0 by -1)
+            if(nums(i) + nums(i+1) > nums(i+2))
+                return nums(i) + nums(i+1) + nums(i+2);
+        return 0;
+    }
+}
