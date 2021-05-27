@@ -30,3 +30,14 @@ object Solution {
         res
     }
 }
+
+object Solution {
+    def isAnagram(s: String, t: String): Boolean = {
+        var res = true
+        var arr1 = s.sorted
+        var arr2 = t.sorted
+        res = arr1.sameElements(arr2);
+        res
+        
+    }
+}
